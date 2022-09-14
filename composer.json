@@ -1,5 +1,5 @@
 {
-    "name": "babenkoivan/scout-elasticsearch-driver",
+    "name": "amirpourastarabadi/scout-elasticsearch-driver-1",
     "type": "library",
     "description": "The Elasticsearch Driver for Laravel Scout",
     "keywords": [
@@ -11,22 +11,15 @@
         "scout",
         "search"
     ],
-    "homepage": "https://babenkoivan.github.io/scout-elasticsearch-driver/",
+    "homepage": "https://github.com/pelazio/scout-elasticsearch-driver",
     "license": "MIT",
-    "authors": [
-        {
-            "name": "Babenko Ivan",
-            "email": "babenko.i.a@gmail.com",
-            "role": "Developer"
-        }
-    ],
     "require": {
         "php": "^7.1.|^8.0",
         "elasticsearch/elasticsearch": ">=7.0 <=7.11.0",
-        "laravel/scout": "^7.0|^8.0"
+        "laravel/scout": "^7.0|^8.0|^9"
     },
     "require-dev": {
-        "phpunit/phpunit": "^7.0|^8.0",
+        "phpunit/phpunit": "^7.0|^8.0|^9",
         "mockery/mockery": "^1.0"
     },
     "autoload": {
