@@ -143,7 +143,7 @@ class ElasticEngine extends Engine
                 ->setIfNotNull('body.size', $builder->limit);
 
             foreach ($builder->wheres as $clause => $filters) {
-                $clauseKey = 'body.query.bool.filter.bool.'.$clause;
+                $clauseKey = 'body.query.bool.filter.bool.' . $clause;
 
                 $clauseValue = array_merge(
                     $payload->get($clauseKey, []),
@@ -344,6 +344,19 @@ class ElasticEngine extends Engine
     }
 
     /**
+     * Map the given results to instances of the given model via a lazy collection.
+     *
+     * @param  \Laravel\Scout\Builder  $builder
+     * @param  mixed  $results
+     * @param  \Illuminate\Database\Eloquent\Model  $model
+     * @return \Illuminate\Support\LazyCollection
+     */
+    public function lazyMap(Builder $builder, $results, $model)
+    {
+        //
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function getTotalCount($results)
@@ -361,5 +374,28 @@ class ElasticEngine extends Engine
         $query
             ->orderBy($model->getScoutKeyName())
             ->unsearchable();
+    }
+
+    /**
+     * Create a search index.
+     *
+     * @param  string  $name
+     * @param  array  $options
+     * @return mixed
+     */
+    public function createIndex($name, array $options = [])
+    {
+        //
+    }
+
+    /**
+     * Delete a search index.
+     *
+     * @param  string  $name
+     * @return mixed
+     */
+    public function deleteIndex($name)
+    {
+        //
     }
 }
